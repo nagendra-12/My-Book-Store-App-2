@@ -1,0 +1,113 @@
+<!doctype html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/04bd72a003.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <title> My Book Store Preview </title>
+    <link rel="icon"
+        href="https://res.cloudinary.com/dhfmjj1j9/image/upload/v1662629238/book-store-logo-46C984FB82-seeklogo.com_xcp1wi.png"
+        type="image/icon type">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div id="bookStore" class="container book-table">
+        <p class="ml-auto mr-5 mb-5 books-head"> Total Books in Your Store : <span id="totalBooks"> 0 </span> </p>
+        <div class="headings2">
+            <img class="logo" src="https://res.cloudinary.com/dhfmjj1j9/image/upload/v1662629238/book-store-logo-46C984FB82-seeklogo.com_xcp1wi.png"/>
+            <div>
+                <h1 class="title ml-3"> Manage Book Store </h1>
+            </div>
+            <div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success mr-2 d-none" data-toggle="modal" data-target="#exampleModal">
+                    Add Book
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog mt-5">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title tanking-customers-modal-title" id="exampleModalLabel"> Book
+                                    Details
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <label for="book"> Book </label>
+                                <input type="text" placeholder="Please enter a book name" id='book'
+                                    class="form-control" />
+                                <label for="author"> Author </label>
+                                <input type="text" placeholder="Please enter a author name" id='author'
+                                    class="form-control" />
+                                <label for="price"> Price </label>
+                                <input type="text" placeholder="Please enter price" id='price' class="form-control" />
+                            </div>
+                            <div class="modal-footer">
+                                <button id="addButton" type="button" class="btn btn-primary"
+                                    data-dismiss="modal">Add</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="updateBtn" class="btn btn-warning d-none"> Update </button>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th> <label for="book1"> Book </label> </th>
+                    <th> <label for="author1"> Author </label> </th>
+                    <th> <label for="price1"> Price(Rs) </label> </th>
+                </tr>
+            </thead>
+            <tbody class="d-none" id="body">
+
+                </div>
+            </tbody>
+            <tbody id="body1">
+
+            </div>
+        </tbody>
+        </table>
+    </div>
+    <a id="logOutBtn" class="ml-auto mr-5 mb-5 d-none"><button class="btn btn-warning"> Logout </button></a>
+    <div class="text-center">
+        <!--<button id="preview" class="btn btn-primary mt-4 mb-4 d-none"> Preview </button>!-->
+        <button id="download" class="btn btn-success mt-4 mb-4"> Download Pdf </button>
+        <a href="index.html"> <button class="btn btn-warning mt-4 mb-4"> Go to Your Book Store </button> </a>
+    </div>
+    <div class="text-right d-none p-5">
+        <a href="pdf.html" target="_blank"> <button id="generate" class="btn btn-info"> Generate </button> </a>
+        <button class="btn btn-warning sign-up-button d-none" id="signUp"> Sign Up </button>
+    <a id="logIn"><button class="btn btn-warning sign-up-button d-none"> Login </button></a>
+    <p class="login-desc mt-3 d-none"> Have you already registered? / <a href="#" id="loginAccount" class="login-desc"> Login
+        here </a></p>
+        <p class="login-desc mt-3 d-none"> Have you no account? / <a href="#" id="createAccount" class="login-desc"> Create new account </a></p>
+    </div>
+    <p class="d-none" id="generateMsg"></p>
+    <script type="text/javascript"
+        src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+    <script src="edit.js"></script>
+</body>
+
+</html>
